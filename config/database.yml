@@ -10,12 +10,14 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DATABASE_USERNAME'] || 'matron' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || '' %>
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
 
 development:
   <<: *default
@@ -51,4 +53,4 @@ production:
   <<: *default
   database: antdesign_playground_production
   username: antdesign_playground
-  password: <%= ENV['ANTDESIGN_PLAYGROUND_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
