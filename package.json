@@ -9,6 +9,7 @@
     "antd": "^3.13.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react": "^6.24.1",
+    "postcss-cssnext": "^3.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
@@ -17,7 +18,6 @@
   },
   "devDependencies": {
     "pnp-webpack-plugin": "^1.2.1",
-    "postcss-cssnext": "^3.1.0",
     "webpack-dev-server": "^3.1.14"
   }
 }
